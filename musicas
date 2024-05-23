@@ -2,3 +2,21 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+#Abrindo arquivo csv a partir de um link
+df = pd.read_csv('https://raw.githubusercontent.com/bruizel/dados-LastFM/825c04dc6540b9725e6d2f165c6de1b2a9004baf/dados.csv')
+
+#Verifica arquivo aberto
+df.head()
+
+#Verifica total de registros 
+df.shape
+
+#Verifica comteudo das colunas
+df.info()
+
+#Conferinfo de há campos vazios
+df.isna().sum()
+
+#Substituindo todos os albums vazios com 'No album'
+df = df.fillna('No album')
+
